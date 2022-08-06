@@ -1,0 +1,39 @@
+//
+//  MainViewModel.swift
+//  MVVM+Rx
+//
+//  Created by  M.Elshaer on 16/2/20.
+//  Copyright © 2020 M.Elshaer. All rights reserved.
+//
+
+import RxSwift
+
+class MainViewModel {
+	
+	public let posts: PublishSubject<[Post]> = PublishSubject()
+	public let isLoading: PublishSubject<Bool> = PublishSubject()
+	private let disposeBag = DisposeBag()
+
+	func fetchData() {
+		isLoading.onNext(true)
+		ApiClient.getPosts()
+			.observeOn(MainScheduler.instance)
+			.subscribe(onNext: { [unowned self] response in
+				print("Endpoint Called Successfully")
+				self.posts.onNext(response.hits)
+				self.isLoading.onNext(false)
+				}, onError: { error in
+					switch error {
+					case APIError.conflict:
+						print("Conflict error")
+					case APIError.forbidden:
+						print("Forbidden error")
+					case APIError.notFound:
+						print("Not found error")
+					default:
+						print("Unknown error:", error)
+					}
+			})
+			.disposed(by: disposeBag)
+	}
+}
