@@ -24,6 +24,7 @@
 		45EA4C9323F9BC0C005ADF26 /* PostCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45EA4C9123F9BC0C005ADF26 /* PostCell.xib */; };
 		59BD305A7877AFFF22B48686 /* Pods_MVVM_Rx.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57A5EBB29AA78418A56FC916 /* Pods_MVVM_Rx.framework */; };
 		E24E2092289EF6280043D263 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24E2091289EF6280043D263 /* ProfileViewModel.swift */; };
+		E24E2095289F08F60043D263 /* UIViewController+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24E2094289F08F60043D263 /* UIViewController+Alert.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,6 +54,7 @@
 		57A5EBB29AA78418A56FC916 /* Pods_MVVM_Rx.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MVVM_Rx.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6FF214907EB58F7A4D8F3B7B /* Pods-MVVM+Rx.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MVVM+Rx.release.xcconfig"; path = "Target Support Files/Pods-MVVM+Rx/Pods-MVVM+Rx.release.xcconfig"; sourceTree = "<group>"; };
 		E24E2091289EF6280043D263 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
+		E24E2094289F08F60043D263 /* UIViewController+Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Alert.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 				45EA4C7123F990B3005ADF26 /* ViewModel */,
 				45EA4C7723F99547005ADF26 /* NetworkLayer */,
 				45EA4C7223F990BD005ADF26 /* Resourses */,
+				E24E2093289F08D50043D263 /* Extenstion */,
 				45EA4C6823F98FE1005ADF26 /* Info.plist */,
 			);
 			path = "MVVM+Rx";
@@ -193,6 +196,14 @@
 				45EA4C6023F98FDF005ADF26 /* Main.storyboard */,
 			);
 			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		E24E2093289F08D50043D263 /* Extenstion */ = {
+			isa = PBXGroup;
+			children = (
+				E24E2094289F08F60043D263 /* UIViewController+Alert.swift */,
+			);
+			path = Extenstion;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -314,6 +325,7 @@
 				45EA4C8923F99547005ADF26 /* Post.swift in Sources */,
 				45EA4C8323F99547005ADF26 /* Constants.swift in Sources */,
 				45EA4C8523F99547005ADF26 /* APIClient.swift in Sources */,
+				E24E2095289F08F60043D263 /* UIViewController+Alert.swift in Sources */,
 				45EA4C5F23F98FDF005ADF26 /* MainVC.swift in Sources */,
 				45EA4C8723F99547005ADF26 /* Response.swift in Sources */,
 				45EA4C5B23F98FDF005ADF26 /* AppDelegate.swift in Sources */,

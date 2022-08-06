@@ -12,6 +12,7 @@ class MainViewModel {
 	
 	public let posts: PublishSubject<[Post]> = PublishSubject()
 	public let isLoading: PublishSubject<Bool> = PublishSubject()
+    public let error: PublishSubject<String> = PublishSubject()
 	private let disposeBag = DisposeBag()
 
 	func fetchData() {
@@ -25,13 +26,13 @@ class MainViewModel {
 				}, onError: { error in
 					switch error {
 					case APIError.conflict:
-						print("Conflict error")
+                        self.error.onNext("Conflict error")
 					case APIError.forbidden:
-						print("Forbidden error")
+                        self.error.onNext("Forbidden error")
 					case APIError.notFound:
-						print("Not found error")
+                        self.error.onNext("Not found error")
 					default:
-						print("Unknown error:", error)
+                        self.error.onNext("Unknown error: \(error)")
 					}
 			})
 			.disposed(by: disposeBag)

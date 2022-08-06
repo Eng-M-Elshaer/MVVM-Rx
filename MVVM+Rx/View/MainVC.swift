@@ -48,6 +48,9 @@ extension MainVC {
 		
 		// Get the model of the selected cell and inject it to the profile screen
         getTheData()
+        
+        // Get the errors and view it.
+        bindErrors()
 	}
 	
 	private func setup(activityIndicator: UIActivityIndicatorView) {
@@ -94,6 +97,13 @@ extension MainVC {
         tableView.rx.modelSelected(Post.self)
             .subscribe(onNext: { [unowned self] post in
                 self.goToProfileScreen(for: post)
+            }).disposed(by: disposeBag)
+    }
+    private func bindErrors(){
+        mainViewModel.error
+            .observeOn(MainScheduler.instance)
+            .subscribe(onNext: {error in
+                self.showAlertMesage(error)
             }).disposed(by: disposeBag)
     }
 }
