@@ -23,6 +23,7 @@
 		45EA4C9223F9BC0C005ADF26 /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45EA4C9023F9BC0C005ADF26 /* PostCell.swift */; };
 		45EA4C9323F9BC0C005ADF26 /* PostCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45EA4C9123F9BC0C005ADF26 /* PostCell.xib */; };
 		59BD305A7877AFFF22B48686 /* Pods_MVVM_Rx.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57A5EBB29AA78418A56FC916 /* Pods_MVVM_Rx.framework */; };
+		E24E2092289EF6280043D263 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24E2091289EF6280043D263 /* ProfileViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +52,7 @@
 		45EA4CA223F9F358005ADF26 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		57A5EBB29AA78418A56FC916 /* Pods_MVVM_Rx.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MVVM_Rx.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6FF214907EB58F7A4D8F3B7B /* Pods-MVVM+Rx.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MVVM+Rx.release.xcconfig"; path = "Target Support Files/Pods-MVVM+Rx/Pods-MVVM+Rx.release.xcconfig"; sourceTree = "<group>"; };
+		E24E2091289EF6280043D263 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +131,7 @@
 			isa = PBXGroup;
 			children = (
 				45EA4C7323F9918F005ADF26 /* MainViewModel.swift */,
+				E24E2091289EF6280043D263 /* ProfileViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -314,6 +317,7 @@
 				45EA4C5F23F98FDF005ADF26 /* MainVC.swift in Sources */,
 				45EA4C8723F99547005ADF26 /* Response.swift in Sources */,
 				45EA4C5B23F98FDF005ADF26 /* AppDelegate.swift in Sources */,
+				E24E2092289EF6280043D263 /* ProfileViewModel.swift in Sources */,
 				45EA4C8D23F9B122005ADF26 /* ProfileVC.swift in Sources */,
 				45EA4C8B23F99547005ADF26 /* APIRouter.swift in Sources */,
 				45EA4C7423F9918F005ADF26 /* MainViewModel.swift in Sources */,
