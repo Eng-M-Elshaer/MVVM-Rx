@@ -47,7 +47,7 @@ extension MainVC {
         deselectAnItem()
 		
 		// Get the model of the selected cell and inject it to the profile screen
-        getTheModel()
+        getTheData()
 	}
 	
 	private func setup(activityIndicator: UIActivityIndicatorView) {
@@ -58,7 +58,7 @@ extension MainVC {
 	
 	private func goToProfileScreen(for post: Post) {
 		let profileVC = storyboard?.instantiateViewController(withIdentifier: "ProfileVC") as! ProfileVC
-        profileVC.post = post
+        profileVC.profileViewModel.post.onNext(post)
 		present(profileVC, animated: true, completion: nil)
 	}
 	
@@ -81,8 +81,8 @@ extension MainVC {
         mainViewModel
             .posts
             .observeOn(MainScheduler.instance)
-            .bind(to: tableView.rx.items(cellIdentifier: "PostCell", cellType: PostCell.self)) { row, model, cell in
-                cell.post = model
+            .bind(to: tableView.rx.items(cellIdentifier: "PostCell", cellType: PostCell.self)) { row, data, cell in
+                cell.post = data
                 }.disposed(by: disposeBag)
     }
     private func deselectAnItem(){
@@ -90,7 +90,7 @@ extension MainVC {
             .subscribe(onNext: { [unowned self] indexPath in
                 self.tableView.deselectRow(at: indexPath, animated: true)}).disposed(by: disposeBag)
     }
-    private func getTheModel(){
+    private func getTheData(){
         tableView.rx.modelSelected(Post.self)
             .subscribe(onNext: { [unowned self] post in
                 self.goToProfileScreen(for: post)

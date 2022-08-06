@@ -9,11 +9,11 @@
 import Foundation
 
 struct Post: Codable {
-	let user: String
-	let likes: Int
-	let tags: String
-	let userImageURL: String
-	let largeImageURL: String
+	var user: String = ""
+	var likes: Int = 0
+	var tags: String = ""
+	var userImageURL: String = ""
+	var largeImageURL: String = ""
 	
 	func getImageURL() -> URL {
 		return URL(string: largeImageURL) ?? URL(fileURLWithPath: "")
